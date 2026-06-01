@@ -24,28 +24,11 @@
   --yellow:  #fed23a;
   --white:   #ffffff;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(--gray100); color: var(--midnight); }
 
-/* ══ HEADER ══ */
-.header {
-  background: var(--inky);
-  padding: 36px 48px 28px;
-  position: relative;
-  overflow: hidden;
-  max-width: 960px;
-  margin: 0 auto;
-}
-.header::after {
-  content: '';
-  position: absolute;
-  right: -40px; top: -40px;
-  width: 320px; height: 320px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cpolygon points='150,10 230,55 230,145 150,190 70,145 70,55' fill='none' stroke='%2300c0fc' stroke-width='1.5' opacity='0.15'/%3E%3Cpolygon points='150,50 210,83 210,148 150,181 90,148 90,83' fill='none' stroke='%2300c0fc' stroke-width='1' opacity='0.1'/%3E%3Cpolygon points='200,110 240,133 240,180 200,203 160,180 160,133' fill='none' stroke='%230a7acc' stroke-width='1' opacity='0.12'/%3E%3Cpolygon points='235,55 265,72 265,108 235,125 205,108 205,72' fill='none' stroke='%23114989' stroke-width='1.5' opacity='0.18'/%3E%3C/svg%3E") no-repeat center;
-  background-size: contain;
-  pointer-events: none;
-}
+.header { background: var(--inky); padding: 36px 48px 28px; position: relative; overflow: hidden; max-width: 960px; margin: 0 auto; }
+.header::after { content: ''; position: absolute; right: -40px; top: -40px; width: 320px; height: 320px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cpolygon points='150,10 230,55 230,145 150,190 70,145 70,55' fill='none' stroke='%2300c0fc' stroke-width='1.5' opacity='0.15'/%3E%3Cpolygon points='150,50 210,83 210,148 150,181 90,148 90,83' fill='none' stroke='%2300c0fc' stroke-width='1' opacity='0.1'/%3E%3Cpolygon points='200,110 240,133 240,180 200,203 160,180 160,133' fill='none' stroke='%230a7acc' stroke-width='1' opacity='0.12'/%3E%3Cpolygon points='235,55 265,72 265,108 235,125 205,108 205,72' fill='none' stroke='%23114989' stroke-width='1.5' opacity='0.18'/%3E%3C/svg%3E") no-repeat center; background-size: contain; pointer-events: none; }
 .header-kicker { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bright); margin-bottom: 14px; }
 .header-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
 .hex-cluster { display: flex; gap: 2px; flex-direction: column; align-items: flex-start; }
@@ -62,7 +45,6 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
 .header-date { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: var(--gray500); text-transform: uppercase; margin-top: 18px; }
 .bright-bar { height: 5px; background: var(--bright); max-width: 960px; margin: 0 auto; }
 
-/* ══ EXPLAINER ══ */
 .explainer { background: var(--white); padding: 28px 48px; max-width: 960px; margin: 0 auto; border-bottom: 1px solid var(--gray200); }
 .explainer-title { font-size: 11px; font-weight: 700; color: var(--inky); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
 .explainer-title::after { content: ''; flex: 1; height: 2px; background: var(--bright); }
@@ -79,53 +61,16 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
 .recall-row { display: flex; gap: 8px; margin-bottom: 7px; font-size: 11px; color: var(--midnight); font-weight: 300; line-height: 1.5; }
 .recall-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--bright); flex-shrink: 0; margin-top: 5px; }
 
-/* ══ TABS ══ */
 .tab-nav { background: var(--white); border-bottom: 2px solid var(--gray200); display: flex; max-width: 960px; margin: 0 auto; position: sticky; top: 0; z-index: 10; }
-.tab-btn {
-  padding: 16px 40px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  color: var(--gray500);
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-  transition: color 0.15s, border-color 0.15s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+.tab-btn { padding: 16px 28px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: none; background: transparent; cursor: pointer; color: var(--gray500); border-bottom: 3px solid transparent; margin-bottom: -2px; transition: color 0.15s, border-color 0.15s; display: flex; align-items: center; gap: 8px; }
 .tab-btn:hover { color: var(--mid); }
 .tab-btn.active { color: var(--dark); border-bottom-color: var(--bright); }
-.tab-flag { font-size: 18px; }
-.tab-compare-btn {
-  margin-left: auto;
-  padding: 16px 28px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  color: var(--gray500);
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-  transition: color 0.15s, border-color 0.15s;
-}
-.tab-compare-btn:hover { color: var(--mid); }
-.tab-compare-btn.active { color: var(--dark); border-bottom-color: var(--yellow); }
+.tab-btn.trends-btn.active { color: #a06000; border-bottom-color: var(--yellow); }
+.tab-flag { font-size: 17px; }
 
-/* ══ TAB CONTENT ══ */
 .tab-panel { display: none; max-width: 960px; margin: 0 auto; background: var(--white); }
 .tab-panel.active { display: block; }
 
-/* ══ STAT STRIP ══ */
 .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--dark); }
 .stat { padding: 22px 16px; border-right: 1px solid rgba(255,255,255,0.1); text-align: center; }
 .stat:last-child { border-right: none; }
@@ -135,7 +80,6 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
 .stat-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light); margin-bottom: 2px; }
 .stat-sub { font-size: 10px; color: rgba(205,236,248,0.55); font-weight: 300; }
 
-/* ══ BODY ══ */
 .body { padding: 28px 48px 36px; }
 .sec-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--light); }
 .section-block { margin-bottom: 26px; }
@@ -143,7 +87,6 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
 .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 26px; }
 .sec-divider { height: 1px; background: var(--gray200); margin: 4px 0 24px; }
 
-/* ══ BAR CHARTS ══ */
 .bar-item { margin-bottom: 6px; }
 .bar-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
 .bar-name { font-size: 11px; font-weight: 400; color: var(--midnight); }
@@ -151,40 +94,35 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
 .bar-track { height: 8px; background: var(--light); border-radius: 1px; overflow: hidden; }
 .bar-fill { height: 100%; border-radius: 1px; }
 
-/* ══ TIMELINE ══ */
 .tl-wrap { display: flex; align-items: flex-end; gap: 6px; height: 90px; }
 .tl-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end; }
 .tl-bar { width: 100%; border-radius: 2px 2px 0 0; }
 .tl-num { font-size: 9px; font-weight: 600; }
 .tl-lbl { font-size: 8px; color: var(--gray500); font-weight: 600; letter-spacing: 0.04em; text-align: center; }
 
-/* ══ ORIGIN BAR ══ */
 .origin-bar { height: 28px; display: flex; border-radius: 3px; overflow: hidden; margin-bottom: 8px; }
 .origin-seg { display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.95); }
 .origin-legend { display: flex; flex-wrap: wrap; gap: 6px; }
 .origin-legend span { font-size: 10px; color: var(--gray500); display: flex; align-items: center; gap: 3px; }
 .ld { width: 9px; height: 9px; border-radius: 1px; display: inline-block; }
 
-/* ══ INSIGHT CARDS ══ */
 .insight { border-radius: 4px; padding: 13px 15px; }
 .insight-title { font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
 .insight-body { font-size: 11px; line-height: 1.6; font-weight: 300; }
 
-/* ══ SPOTLIGHT CALLOUT ══ */
 .callout { background: var(--inky); border-radius: 4px; padding: 12px 14px; }
 .callout-num { font-size: 28px; font-weight: 700; color: var(--bright); line-height: 1; }
 .callout-text { font-size: 11px; color: var(--light); margin-top: 3px; font-weight: 300; line-height: 1.5; }
 
-/* ══ TAG PILLS ══ */
 .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--mid); color: var(--mid); margin: 2px; }
 
-/* ══ COMPARE PANEL ══ */
-.compare-header { background: var(--midnight); padding: 20px 48px; display: flex; align-items: center; gap: 12px; }
+/* COMPARE */
+.compare-header { background: var(--midnight); padding: 20px 48px; }
 .compare-header-title { font-size: 14px; font-weight: 700; color: var(--white); }
 .compare-header-sub { font-size: 11px; color: var(--gray300); font-weight: 300; margin-top: 2px; }
 .compare-body { padding: 28px 48px 36px; }
 .compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
-.compare-col-hdr { font-size: 12px; font-weight: 700; padding: 10px 14px; border-radius: 4px 4px 0 0; color: var(--white); text-transform: uppercase; letter-spacing: 0.08em; display: flex; align-items: center; gap: 8px; }
+.compare-col-hdr { font-size: 12px; font-weight: 700; padding: 10px 14px; border-radius: 4px 4px 0 0; color: var(--white); text-transform: uppercase; letter-spacing: 0.08em; }
 .compare-col-hdr.eu { background: var(--dark); }
 .compare-col-hdr.uk { background: var(--midnight); }
 .compare-col-body { background: var(--gray100); border-radius: 0 0 4px 4px; padding: 14px; }
@@ -192,14 +130,40 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
 .cmp-stat:last-child { border-bottom: none; }
 .cmp-stat-label { font-weight: 400; color: var(--midnight); }
 .cmp-stat-val { font-weight: 700; color: var(--dark); }
-.trend-up { color: var(--red); font-size: 10px; margin-left: 4px; }
-.trend-neutral { color: var(--gray500); font-size: 10px; margin-left: 4px; }
 .diff-row { display: grid; grid-template-columns: 1fr 60px 1fr; gap: 10px; align-items: center; margin-bottom: 10px; }
 .diff-label { font-size: 11px; font-weight: 300; color: var(--midnight); line-height: 1.5; }
 .diff-label.eu-side { text-align: right; }
 .diff-vs { font-size: 10px; font-weight: 700; color: var(--gray500); text-align: center; padding: 4px 0; background: var(--gray200); border-radius: 3px; }
 
-/* ══ FOOTER ══ */
+/* TRENDS TAB */
+.trends-header { background: linear-gradient(135deg, #2a1a00 0%, #1a0d00 100%); padding: 24px 48px; border-bottom: 3px solid var(--yellow); }
+.trends-header-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--yellow); margin-bottom: 8px; }
+.trends-header-title { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.trends-header-sub { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.6; }
+.trends-body { padding: 28px 48px 36px; }
+
+.delta-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 28px; }
+.delta-card { background: var(--gray100); border-radius: 4px; padding: 14px 16px; border-top: 3px solid var(--gray300); }
+.delta-card.up { border-top-color: var(--red); }
+.delta-card.down { border-top-color: var(--green); }
+.delta-card.new { border-top-color: var(--yellow); }
+.delta-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray500); margin-bottom: 6px; }
+.delta-num { font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 2px; }
+.delta-num.up { color: var(--red); }
+.delta-num.down { color: var(--green); }
+.delta-num.new { color: #a06000; }
+.delta-sub { font-size: 11px; color: var(--gray500); font-weight: 300; }
+.delta-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 2px; margin-left: 4px; }
+.delta-badge.up { background: #fde8e8; color: var(--red); }
+.delta-badge.down { background: #e8f5e9; color: #2e6e1b; }
+
+.trend-compare-row { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 12px; align-items: stretch; margin-bottom: 10px; }
+.trend-q { background: var(--gray100); border-radius: 4px; padding: 12px 14px; font-size: 11px; color: var(--midnight); line-height: 1.6; font-weight: 300; }
+.trend-q strong { font-weight: 600; }
+.trend-q.q2 { background: var(--light); }
+.trend-mid { display: flex; align-items: center; justify-content: center; }
+.trend-mid-inner { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); background: var(--dark); border-radius: 3px; padding: 6px 4px; text-align: center; line-height: 1.4; }
+
 .footer { background: var(--inky); padding: 14px 48px; display: flex; justify-content: space-between; align-items: center; max-width: 960px; margin: 0 auto; }
 .footer-left { font-size: 10px; color: var(--gray500); font-weight: 300; }
 .footer-right { font-size: 11px; color: var(--bright); font-weight: 600; letter-spacing: 0.06em; }
@@ -207,7 +171,6 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
 </head>
 <body>
 
-<!-- ══ SHARED HEADER ══ -->
 <div class="header">
   <div class="header-kicker">EU Safety Gate · UK OPSS · Product Safety Intelligence</div>
   <div class="header-logo">
@@ -219,11 +182,10 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
   </div>
   <div class="header-title">EU &amp; UK Product Safety<br><span class="hl">Alert Intelligence</span></div>
   <div class="header-sub">Comparative analysis of dangerous product alerts across EU Safety Gate (RAPEX) and the UK Office for Product Safety &amp; Standards (OPSS) — hazard trends, enforcement patterns, and market origins.</div>
-  <div class="header-date">EU: December 2025 – May 2026 &nbsp;·&nbsp; UK: December 2025 – May 2026</div>
+  <div class="header-date">EU: January – May 2026 &nbsp;·&nbsp; UK: January – May 2026</div>
 </div>
 <div class="bright-bar"></div>
 
-<!-- ══ SHARED EXPLAINER ══ -->
 <div class="explainer">
   <div class="explainer-title">What Are Product Safety Alerts?</div>
   <div class="explainer-grid">
@@ -260,48 +222,42 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
   </div>
 </div>
 
-<!-- ══ TAB NAVIGATION ══ -->
 <div class="tab-nav">
-  <button class="tab-btn active" onclick="switchTab('eu', this)"><span class="tab-flag">🇪🇺</span> EU Alerts</button>
-  <button class="tab-btn" onclick="switchTab('uk', this)"><span class="tab-flag">🇬🇧</span> UK Alerts</button>
-  <button class="tab-compare-btn" onclick="switchTab('compare', this)">⇄ Compare Both</button>
+  <button class="tab-btn active" onclick="switchTab('eu',this)"><span class="tab-flag">🇪🇺</span> EU Alerts</button>
+  <button class="tab-btn" onclick="switchTab('uk',this)"><span class="tab-flag">🇬🇧</span> UK Alerts</button>
+  <button class="tab-btn" onclick="switchTab('compare',this)">⇄ Compare Both</button>
+  <button class="tab-btn trends-btn" onclick="switchTab('trends',this)">📈 Q2 Trends</button>
 </div>
 
-<!-- ══════════════════════════════════════
-     EU TAB
-══════════════════════════════════════ -->
+<!-- ══ EU TAB ══ -->
 <div class="tab-panel active" id="tab-eu">
-
   <div class="stat-strip">
-    <div class="stat"><div class="stat-num accent">1,364</div><div class="stat-label">Total Alerts</div><div class="stat-sub">Dec 2025 – May 2026</div></div>
-    <div class="stat"><div class="stat-num">99.9<span>%</span></div><div class="stat-label">Serious Risk</div><div class="stat-sub">1,362 of 1,364</div></div>
-    <div class="stat"><div class="stat-num">56<span>%</span></div><div class="stat-label">Made in China</div><div class="stat-sub">765 products</div></div>
-    <div class="stat"><div class="stat-num">41<span>%</span></div><div class="stat-label">Chemical Hazard</div><div class="stat-sub">560 alerts</div></div>
+    <div class="stat"><div class="stat-num accent">1,374</div><div class="stat-label">Total Alerts</div><div class="stat-sub">Jan – May 2026</div></div>
+    <div class="stat"><div class="stat-num">97.2<span>%</span></div><div class="stat-label">Serious Risk</div><div class="stat-sub">1,336 of 1,374</div></div>
+    <div class="stat"><div class="stat-num">58.6<span>%</span></div><div class="stat-label">Made in China</div><div class="stat-sub">805 products</div></div>
+    <div class="stat"><div class="stat-num">38.4<span>%</span></div><div class="stat-label">Chemical Hazard</div><div class="stat-sub">528 alerts</div></div>
   </div>
-
   <div class="body">
     <div class="two-col">
       <div class="section-block">
         <div class="sec-label">Alert volume by month</div>
         <div class="tl-wrap" id="eu-tl"></div>
         <div style="display:flex;justify-content:space-around;margin-top:4px">
-          <span class="tl-lbl">DEC</span><span class="tl-lbl">JAN</span><span class="tl-lbl">FEB</span><span class="tl-lbl">MAR</span><span class="tl-lbl">APR</span><span class="tl-lbl">MAY*</span>
+          <span class="tl-lbl">JAN</span><span class="tl-lbl">FEB</span><span class="tl-lbl">MAR</span><span class="tl-lbl">APR</span><span class="tl-lbl">MAY</span>
         </div>
-        <div style="margin-top:8px;font-size:10px;color:var(--gray500);font-weight:300">Peak: February 2026 — 322 alerts. *December 2025 and May 2026 partial.</div>
+        <div style="margin-top:8px;font-size:10px;color:var(--gray500);font-weight:300">Peak: February 2026 — 324 alerts.</div>
       </div>
       <div class="section-block">
         <div class="sec-label">Country of origin</div>
         <div class="origin-bar" id="eu-origin-bar"></div>
         <div class="origin-legend" id="eu-origin-legend"></div>
         <div style="margin-top:12px;background:var(--light);border-radius:4px;padding:10px 12px">
-          <div style="font-size:20px;font-weight:700;color:var(--dark)">178</div>
+          <div style="font-size:20px;font-weight:700;color:var(--dark)">165</div>
           <div style="font-size:10px;color:var(--gray500);margin-top:2px;font-weight:300">products have <strong style="font-weight:600;color:var(--midnight)">unknown origin</strong> — a significant traceability concern</div>
         </div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
-
     <div class="two-col">
       <div class="section-block">
         <div class="sec-label">Top product categories</div>
@@ -312,14 +268,12 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
         <div id="eu-risk-bars"></div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
-
     <div class="two-col">
       <div class="section-block">
-        <div class="sec-label">Spotlight — Cosmetics (359 alerts · #1 category)</div>
+        <div class="sec-label">Spotlight — Cosmetics (329 alerts · #1 category)</div>
         <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:10px">
-          <span style="font-size:40px;font-weight:700;color:var(--dark);line-height:1">359</span>
+          <span style="font-size:40px;font-weight:700;color:var(--dark);line-height:1">329</span>
           <span style="font-size:11px;color:var(--gray500);font-weight:300">alerts · #1 category</span>
         </div>
         <div id="eu-cos-bars"></div>
@@ -329,117 +283,108 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
         </div>
       </div>
       <div class="section-block">
-        <div class="sec-label">Spotlight — Toys (260 alerts · #2 category)</div>
+        <div class="sec-label">Spotlight — Toys (281 alerts · #2 category)</div>
         <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:10px">
-          <span style="font-size:40px;font-weight:700;color:var(--mid);line-height:1">260</span>
+          <span style="font-size:40px;font-weight:700;color:var(--mid);line-height:1">281</span>
           <span style="font-size:11px;color:var(--gray500);font-weight:300">alerts · #2 category</span>
         </div>
         <div id="eu-toy-bars"></div>
         <div style="margin-top:12px">
           <div class="callout">
-            <div class="callout-num">15</div>
+            <div class="callout-num">14</div>
             <div class="callout-text">confirmed <strong style="font-weight:600">counterfeit</strong> products — Pop Mart fakes led with 9 alerts</div>
           </div>
         </div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
-
     <div class="two-col">
       <div class="section-block">
         <div class="sec-label">Top notifying countries</div>
         <div id="eu-notify-bars"></div>
-        <div style="margin-top:8px;font-size:10px;color:var(--gray500);font-weight:300">France + UK (N. Ireland) account for 29% of all EU alerts.</div>
+        <div style="margin-top:8px;font-size:10px;color:var(--gray500);font-weight:300">France + UK (N. Ireland) account for 28% of all EU alerts.</div>
       </div>
       <div class="section-block">
         <div class="sec-label">Enforcement actions</div>
         <div style="margin-bottom:12px">
-          <div class="bar-meta"><span class="bar-name">Compulsory (government-ordered)</span><span class="bar-val" style="color:var(--dark)">771</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:56.5%;background:var(--dark)"></div></div>
+          <div class="bar-meta"><span class="bar-name">Compulsory (government-ordered)</span><span class="bar-val" style="color:var(--dark)">758</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:55.2%;background:var(--dark)"></div></div>
         </div>
         <div style="margin-bottom:18px">
-          <div class="bar-meta"><span class="bar-name">Voluntary (company-initiated)</span><span class="bar-val">593</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:43.5%;background:var(--gray300)"></div></div>
+          <div class="bar-meta"><span class="bar-name">Voluntary (company-initiated)</span><span class="bar-val">616</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:44.8%;background:var(--gray300)"></div></div>
         </div>
         <div class="sec-label" style="margin-top:4px">Product type split</div>
         <div style="margin-bottom:6px">
-          <div class="bar-meta"><span class="bar-name">Consumer products</span><span class="bar-val">1,286</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:94%;background:var(--bright)"></div></div>
+          <div class="bar-meta"><span class="bar-name">Consumer products</span><span class="bar-val">1,314</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:95.6%;background:var(--bright)"></div></div>
         </div>
         <div>
-          <div class="bar-meta"><span class="bar-name">Professional use</span><span class="bar-val">78</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:6%;background:var(--light)"></div></div>
+          <div class="bar-meta"><span class="bar-name">Professional use</span><span class="bar-val">60</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:4.4%;background:var(--light)"></div></div>
         </div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
     <div class="sec-label">Key EU patterns &amp; trends</div>
     <div class="three-col">
       <div class="insight" style="background:var(--light)">
         <div class="insight-title" style="color:var(--dark)">Chemical risk dominates</div>
-        <div class="insight-body" style="color:var(--midnight)">560 alerts (41%) cite chemical hazards — concentrated in cosmetics (344), toys (68), jewellery (49), and clothing (38). REACH Regulation non-compliance is the most cited rule.</div>
+        <div class="insight-body" style="color:var(--midnight)">528 alerts (38%) cite chemical hazards — concentrated in cosmetics (316), toys (52), and jewellery (44). REACH Regulation non-compliance is the most commonly cited rule.</div>
       </div>
       <div class="insight" style="background:#fff3e0">
-        <div class="insight-title" style="color:#b36000">Toys: choking &amp; chemical</div>
-        <div class="insight-body" style="color:var(--midnight)">Choking is the #1 toy hazard (113 alerts), followed by chemical (50). February 2026 was the busiest single month with 322 total alerts.</div>
+        <div class="insight-title" style="color:#b36000">Toys: choking leads</div>
+        <div class="insight-body" style="color:var(--midnight)">Choking is the #1 toy hazard (134 alerts), followed by chemical (52). Combined choking and chemical alerts (16) signal a growing dual-risk product profile.</div>
       </div>
       <div class="insight" style="background:#fde8e8">
         <div class="insight-title" style="color:#a30000">Counterfeit pattern</div>
-        <div class="insight-body" style="color:var(--midnight)">15 confirmed counterfeits — Pop Mart drove 9 alerts, the largest single brand impersonation cluster in the dataset.</div>
+        <div class="insight-body" style="color:var(--midnight)">14 confirmed counterfeits — Pop Mart drove 9 alerts, the largest single brand impersonation cluster. Pyrotechnic articles (30 alerts) are a notable new entrant.</div>
       </div>
       <div class="insight" style="background:#e8f5e9">
-        <div class="insight-title" style="color:#2e6e1b">France &amp; Italy are top reporters</div>
-        <div class="insight-body" style="color:var(--midnight)">France (206) and UK via N. Ireland (191) lead, with Italy (174) and Czechia (149) also highly active. Alerts span all 27 EU member states.</div>
+        <div class="insight-title" style="color:#2e6e1b">France &amp; Italy top reporters</div>
+        <div class="insight-body" style="color:var(--midnight)">France (202) and UK via N. Ireland (181) lead, with Italy (157) and Czechia (146) also active. Hungary (71) has risen sharply compared to prior periods.</div>
       </div>
       <div class="insight" style="background:var(--inky)">
-        <div class="insight-title" style="color:var(--bright)">Electrical: fire &amp; shock</div>
-        <div class="insight-body" style="color:var(--light)">217 electrical appliance alerts — electric shock (141) and fire (70) are the primary risks. China is the dominant origin for this category.</div>
+        <div class="insight-title" style="color:var(--bright)">Electrical rising in Q2</div>
+        <div class="insight-body" style="color:var(--light)">Electrical appliance alerts surged +56% from Q1 to Q2 (91 → 142), overtaking cosmetics as the single largest category in April–May. See Q2 Trends tab.</div>
       </div>
       <div class="insight" style="background:var(--gray100)">
         <div class="insight-title" style="color:var(--dark)">ELFLIQ tops brand list</div>
-        <div class="insight-body" style="color:var(--midnight)">E-cigarette brand ELFLIQ leads with 23 alerts, well ahead of Calvin Klein (10). 94% of all flagged products are consumer-facing.</div>
+        <div class="insight-body" style="color:var(--midnight)">E-cigarette brand ELFLIQ leads with 23 alerts. Hong Kong as an origin country jumped from 4 alerts in Q1 to 24 in Q2 — a notable shift worth monitoring.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     UK TAB
-══════════════════════════════════════ -->
+<!-- ══ UK TAB ══ -->
 <div class="tab-panel" id="tab-uk">
-
   <div class="stat-strip" style="background:var(--midnight)">
-    <div class="stat"><div class="stat-num accent">269</div><div class="stat-label">Total Alerts</div><div class="stat-sub">Dec 2025 – May 2026</div></div>
-    <div class="stat"><div class="stat-num">67<span>%</span></div><div class="stat-label">Made in China</div><div class="stat-sub">181 of 269 products</div></div>
-    <div class="stat"><div class="stat-num">37<span>%</span></div><div class="stat-label">Fire / Burns risk</div><div class="stat-sub">99 alerts</div></div>
-    <div class="stat"><div class="stat-num">42<span>%</span></div><div class="stat-label">Import Banned</div><div class="stat-sub">112 compulsory bans</div></div>
+    <div class="stat"><div class="stat-num accent">312</div><div class="stat-label">Total Alerts</div><div class="stat-sub">Jan – May 2026</div></div>
+    <div class="stat"><div class="stat-num">69<span>%</span></div><div class="stat-label">Made in China</div><div class="stat-sub">214 of 312 products</div></div>
+    <div class="stat"><div class="stat-num">38<span>%</span></div><div class="stat-label">Fire / Burns risk</div><div class="stat-sub">118 alerts</div></div>
+    <div class="stat"><div class="stat-num">41<span>%</span></div><div class="stat-label">Import Banned</div><div class="stat-sub">129 compulsory bans</div></div>
   </div>
-
   <div class="body">
     <div class="two-col">
       <div class="section-block">
         <div class="sec-label">Alert volume by month</div>
         <div class="tl-wrap" id="uk-tl"></div>
         <div style="display:flex;justify-content:space-around;margin-top:4px">
-          <span class="tl-lbl">DEC</span><span class="tl-lbl">JAN</span><span class="tl-lbl">FEB</span><span class="tl-lbl">MAR</span><span class="tl-lbl">APR</span><span class="tl-lbl">MAY*</span>
+          <span class="tl-lbl">JAN</span><span class="tl-lbl">FEB</span><span class="tl-lbl">MAR</span><span class="tl-lbl">APR</span><span class="tl-lbl">MAY</span>
         </div>
-        <div style="margin-top:8px;font-size:10px;color:var(--gray500);font-weight:300">Peak: January 2026 — 67 alerts. *December 2025 and May 2026 partial.</div>
+        <div style="margin-top:8px;font-size:10px;color:var(--gray500);font-weight:300">Peak: January 2026 — 67 alerts. May 2026 recovered to 68 alerts after a Q2 dip.</div>
       </div>
       <div class="section-block">
         <div class="sec-label">Country of origin</div>
         <div class="origin-bar" id="uk-origin-bar"></div>
         <div class="origin-legend" id="uk-origin-legend"></div>
         <div style="margin-top:12px;background:var(--light);border-radius:4px;padding:10px 12px">
-          <div style="font-size:20px;font-weight:700;color:var(--dark)">42</div>
-          <div style="font-size:10px;color:var(--gray500);margin-top:2px;font-weight:300">products have <strong style="font-weight:600;color:var(--midnight)">unknown origin</strong> — 16% of all UK alerts</div>
+          <div style="font-size:20px;font-weight:700;color:var(--dark)">45</div>
+          <div style="font-size:10px;color:var(--gray500);margin-top:2px;font-weight:300">products have <strong style="font-weight:600;color:var(--midnight)">unknown origin</strong> — 14% of all UK alerts</div>
         </div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
-
     <div class="two-col">
       <div class="section-block">
         <div class="sec-label">Top product categories</div>
@@ -450,10 +395,7 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
         <div id="uk-risk-bars"></div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
-
-    <!-- UK SPOTLIGHTS -->
     <div class="two-col">
       <div class="section-block">
         <div class="sec-label">🚨 Spotlight — Asbestos in Craft Sand (39 alerts)</div>
@@ -461,10 +403,10 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
           <span style="font-size:40px;font-weight:700;color:var(--red);line-height:1">39</span>
           <span style="font-size:11px;color:var(--gray500);font-weight:300">alerts · single hazard cluster</span>
         </div>
-        <div style="font-size:11px;color:var(--midnight);line-height:1.7;font-weight:300;margin-bottom:12px">The UK's single largest hazard cluster: arts &amp; crafts sand products — including toy kits and craft sets — found to contain trace quantities of <strong style="font-weight:600">asbestos</strong>, a banned carcinogenic substance. Products came from multiple brands and were sold across major retailers and online platforms.</div>
+        <div style="font-size:11px;color:var(--midnight);line-height:1.7;font-weight:300;margin-bottom:12px">Arts &amp; crafts sand products — including toy kits and craft sets — found to contain trace quantities of <strong style="font-weight:600">asbestos</strong>, a banned carcinogenic substance. Products came from multiple brands and were sold across major retailers and online platforms.</div>
         <div class="callout">
           <div class="callout-num" style="color:var(--orange)">KTL</div>
-          <div class="callout-text">Top brand flagged — KTL (formerly Kandy Toys) had 11 asbestos-related alerts alone, the most of any single brand in the UK dataset.</div>
+          <div class="callout-text">Top brand flagged — KTL (formerly Kandy Toys) had 11 asbestos-related alerts, the most of any single brand in the UK dataset.</div>
         </div>
       </div>
       <div class="section-block">
@@ -473,177 +415,155 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
           <span style="font-size:40px;font-weight:700;color:var(--mid);line-height:1">35</span>
           <span style="font-size:11px;color:var(--gray500);font-weight:300">alerts · asphyxiation hazard</span>
         </div>
-        <div style="font-size:11px;color:var(--midnight);line-height:1.7;font-weight:300;margin-bottom:12px">Water-absorbing polymer toys (orbeez-style beads, magic sand kits, hydrating gel sets) flagged for <strong style="font-weight:600">asphyxiation risk</strong>: if swallowed by young children in a hydrated state, the material expands and can block a child's airway, potentially causing death.</div>
+        <div style="font-size:11px;color:var(--midnight);line-height:1.7;font-weight:300;margin-bottom:12px">Water-absorbing polymer toys (orbeez-style beads, magic sand kits, hydrating gel sets) flagged for <strong style="font-weight:600">asphyxiation risk</strong>: if swallowed in a hydrated state, the material can expand and block a child's airway.</div>
         <div class="callout">
           <div class="callout-num">4</div>
-          <div class="callout-text">alerts specifically mention injuries AND asphyxiation together — the most serious category within this cluster.</div>
+          <div class="callout-text">alerts mention injuries AND asphyxiation together — the most serious sub-category within this cluster.</div>
         </div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
-
     <div class="two-col">
       <div class="section-block">
         <div class="sec-label">Top notifying authorities</div>
         <div id="uk-notify-bars"></div>
-        <div style="margin-top:8px;font-size:10px;color:var(--gray500);font-weight:300">Local Authority Trading Standards leads enforcement, followed by the Office for Product Safety &amp; Standards (OPSS) centrally.</div>
+        <div style="margin-top:8px;font-size:10px;color:var(--gray500);font-weight:300">Local Authority Trading Standards leads enforcement, followed by OPSS centrally and the Health &amp; Safety Executive.</div>
       </div>
       <div class="section-block">
         <div class="sec-label">Enforcement actions</div>
         <div style="margin-bottom:6px">
-          <div class="bar-meta"><span class="bar-name">Import bans issued</span><span class="bar-val" style="color:var(--red)">112</span></div>
+          <div class="bar-meta"><span class="bar-name">Import bans issued</span><span class="bar-val" style="color:var(--red)">129</span></div>
           <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--midnight)"></div></div>
         </div>
         <div style="margin-bottom:6px">
-          <div class="bar-meta"><span class="bar-name">End-user recall</span><span class="bar-val">92</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:82%;background:var(--dark)"></div></div>
+          <div class="bar-meta"><span class="bar-name">End-user recall</span><span class="bar-val">109</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--dark)"></div></div>
         </div>
         <div style="margin-bottom:6px">
-          <div class="bar-meta"><span class="bar-name">Online listings removed</span><span class="bar-val">41</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:37%;background:var(--mid)"></div></div>
+          <div class="bar-meta"><span class="bar-name">Online listings removed</span><span class="bar-val">50</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:39%;background:var(--mid)"></div></div>
         </div>
         <div style="margin-bottom:6px">
-          <div class="bar-meta"><span class="bar-name">Warning / advice issued</span><span class="bar-val">31</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:28%;background:var(--bright)"></div></div>
+          <div class="bar-meta"><span class="bar-name">Warning / advice issued</span><span class="bar-val">34</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:26%;background:var(--bright)"></div></div>
         </div>
         <div>
-          <div class="bar-meta"><span class="bar-name">Withdrawn from sale</span><span class="bar-val">27</span></div>
+          <div class="bar-meta"><span class="bar-name">Withdrawn from sale</span><span class="bar-val">31</span></div>
           <div class="bar-track"><div class="bar-fill" style="width:24%;background:var(--light)"></div></div>
-        </div>
-        <div style="margin-top:14px;background:var(--light);border-radius:4px;padding:10px 12px">
-          <div style="font-size:10px;color:var(--gray500);font-weight:300"><strong style="font-weight:600;color:var(--midnight)">TikTok Shop</strong>: 4 alerts specifically mention products sold via TikTok Shop, including an electric boot warmer (fire risk) and a UV gel nail kit (carcinogen).</div>
         </div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
     <div class="sec-label">Key UK patterns &amp; trends</div>
     <div class="three-col">
       <div class="insight" style="background:#fde8e8">
         <div class="insight-title" style="color:#a30000">Asbestos: the dominant story</div>
-        <div class="insight-body" style="color:var(--midnight)">39 alerts (14.5% of all UK alerts) relate to asbestos contamination in craft sand and toy kits — an unprecedented cluster not seen in EU data at this scale.</div>
+        <div class="insight-body" style="color:var(--midnight)">39 alerts (12.5% of all UK alerts) relate to asbestos contamination in craft sand and toy kits — an unprecedented cluster absent from EU data at comparable scale.</div>
       </div>
       <div class="insight" style="background:#fff3e0">
         <div class="insight-title" style="color:#b36000">Fire &amp; electrical #1 hazard</div>
-        <div class="insight-body" style="color:var(--midnight)">99 fire/burn risk alerts and 34 electric shock alerts — together 49% of all UK alerts. Electrical appliances are the top category with 42 alerts.</div>
+        <div class="insight-body" style="color:var(--midnight)">118 fire/burn alerts and 35 electric shock alerts — together 49% of all UK alerts. Electrical appliances are the top category at 56 alerts.</div>
       </div>
       <div class="insight" style="background:var(--light)">
         <div class="insight-title" style="color:var(--dark)">Toy hazards evolving</div>
-        <div class="insight-body" style="color:var(--midnight)">UK toy alerts are dominated by novel physical hazards — expanding polymer ingestion (35 alerts) — rather than the chemical toxicity focus seen in EU toy alerts.</div>
+        <div class="insight-body" style="color:var(--midnight)">UK toy alerts are dominated by novel physical hazards — expanding polymer ingestion (35 alerts) — rather than the chemical toxicity focus seen in EU toy data.</div>
       </div>
       <div class="insight" style="background:#e8f5e9">
-        <div class="insight-title" style="color:#2e6e1b">China: 67% origin share</div>
-        <div class="insight-body" style="color:var(--midnight)">181 of 269 UK flagged products originate from China — 11 percentage points higher than the EU's 56% share, reflecting different import mix post-Brexit.</div>
+        <div class="insight-title" style="color:#2e6e1b">China: 69% origin share</div>
+        <div class="insight-body" style="color:var(--midnight)">214 of 312 UK flagged products originate from China — 10 percentage points higher than EU's 59% share, reflecting post-Brexit import mix shifts.</div>
       </div>
       <div class="insight" style="background:var(--inky)">
         <div class="insight-title" style="color:var(--bright)">Import bans = top action</div>
-        <div class="insight-body" style="color:var(--light)">The UK's most common enforcement action (112 cases) is an import ban — a more aggressive posture than EU's split between compulsory and voluntary measures.</div>
+        <div class="insight-body" style="color:var(--light)">129 import bans (41%) is the UK's most common enforcement action — a more aggressive border-focused posture compared to the EU's compulsory/voluntary split.</div>
       </div>
       <div class="insight" style="background:var(--gray100)">
-        <div class="insight-title" style="color:var(--dark)">TikTok Shop on radar</div>
-        <div class="insight-body" style="color:var(--midnight)">4 UK alerts explicitly name TikTok Shop as the sales platform — a new enforcement signal that online marketplace monitoring is increasing.</div>
+        <div class="insight-title" style="color:var(--dark)">Machinery alerts rising</div>
+        <div class="insight-body" style="color:var(--midnight)">Machinery surged to the #3 category in Q2 (16 alerts vs 7 in Q1, +129%). UK-origin products represent 9 of 16 Q2 machinery alerts — a domestic compliance concern.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     COMPARE TAB
-══════════════════════════════════════ -->
+<!-- ══ COMPARE TAB ══ -->
 <div class="tab-panel" id="tab-compare">
   <div class="compare-header">
-    <div>
-      <div class="compare-header-title">EU vs UK — Side by Side</div>
-      <div class="compare-header-sub">How do the two alert regimes compare in scale, hazard mix, and enforcement approach?</div>
-    </div>
+    <div class="compare-header-title">EU vs UK — Side by Side</div>
+    <div class="compare-header-sub">How do the two alert regimes compare in scale, hazard mix, and enforcement approach? (January – May 2026)</div>
   </div>
   <div class="compare-body">
-
-    <!-- KEY METRICS SIDE BY SIDE -->
     <div class="sec-label" style="margin-bottom:14px">At a Glance</div>
     <div class="compare-row">
       <div>
         <div class="compare-col-hdr eu">🇪🇺 EU Safety Gate (RAPEX)</div>
         <div class="compare-col-body">
-          <div class="cmp-stat"><span class="cmp-stat-label">Total alerts</span><span class="cmp-stat-val">1,364</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Time period</span><span class="cmp-stat-val">Dec 2025 – May 2026</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Avg alerts/month</span><span class="cmp-stat-val">~227</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">China origin</span><span class="cmp-stat-val">56.1%</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Unknown origin</span><span class="cmp-stat-val">13.1%</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Top hazard</span><span class="cmp-stat-val">Chemical (41%)</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Top category</span><span class="cmp-stat-val">Cosmetics (26%)</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Serious risk rate</span><span class="cmp-stat-val">99.9%</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Compulsory actions</span><span class="cmp-stat-val">56.5%</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Counterfeit cases</span><span class="cmp-stat-val">15</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Total alerts</span><span class="cmp-stat-val">1,374</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Time period</span><span class="cmp-stat-val">Jan – May 2026</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Avg alerts/month</span><span class="cmp-stat-val">~275</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">China origin</span><span class="cmp-stat-val">58.6%</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Unknown origin</span><span class="cmp-stat-val">12.0%</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Top hazard</span><span class="cmp-stat-val">Chemical (38%)</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Top category</span><span class="cmp-stat-val">Cosmetics (24%)</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Serious risk rate</span><span class="cmp-stat-val">97.2%</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Compulsory actions</span><span class="cmp-stat-val">55.2%</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Counterfeit cases</span><span class="cmp-stat-val">14</span></div>
         </div>
       </div>
       <div>
         <div class="compare-col-hdr uk">🇬🇧 UK OPSS</div>
         <div class="compare-col-body">
-          <div class="cmp-stat"><span class="cmp-stat-label">Total alerts</span><span class="cmp-stat-val">269</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Time period</span><span class="cmp-stat-val">Dec 2025 – May 2026</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Avg alerts/month</span><span class="cmp-stat-val">~54</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">China origin</span><span class="cmp-stat-val">67.3%</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Unknown origin</span><span class="cmp-stat-val">15.6%</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Top hazard</span><span class="cmp-stat-val">Fire/Burns (37%)</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Top category</span><span class="cmp-stat-val">Electrical (16%)</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Total alerts</span><span class="cmp-stat-val">312</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Time period</span><span class="cmp-stat-val">Jan – May 2026</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Avg alerts/month</span><span class="cmp-stat-val">~62</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">China origin</span><span class="cmp-stat-val">68.6%</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Unknown origin</span><span class="cmp-stat-val">14.4%</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Top hazard</span><span class="cmp-stat-val">Fire/Burns (38%)</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Top category</span><span class="cmp-stat-val">Electrical (18%)</span></div>
           <div class="cmp-stat"><span class="cmp-stat-label">Serious risk rate</span><span class="cmp-stat-val">~100%</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">Import bans</span><span class="cmp-stat-val">112 (42%)</span></div>
-          <div class="cmp-stat"><span class="cmp-stat-label">TikTok Shop mentions</span><span class="cmp-stat-val">4</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Import bans</span><span class="cmp-stat-val">129 (41%)</span></div>
+          <div class="cmp-stat"><span class="cmp-stat-label">Online listings removed</span><span class="cmp-stat-val">50</span></div>
         </div>
       </div>
     </div>
-
     <div class="sec-divider"></div>
-    <div class="sec-label" style="margin-bottom:14px">Key Differences &amp; Shared Trends</div>
-
+    <div class="sec-label" style="margin-bottom:14px">Key Differences</div>
     <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
-
       <div class="diff-row">
-        <div class="diff-label eu-side">Chemical hazards dominate (41%), driven by cosmetics &amp; toys failing REACH regulation</div>
+        <div class="diff-label eu-side">Chemical hazards dominate (38%), driven by cosmetics &amp; toys failing REACH regulation</div>
         <div class="diff-vs" style="background:var(--dark);color:var(--white)">Hazard<br>mix</div>
-        <div class="diff-label">Fire &amp; burns lead (37%); asbestos contamination in craft sand is a UK-specific crisis (39 alerts)</div>
+        <div class="diff-label">Fire &amp; burns lead (38%); asbestos contamination in craft sand is a UK-specific crisis (39 alerts)</div>
       </div>
-
       <div class="diff-row">
-        <div class="diff-label eu-side">Cosmetics #1 category (359 alerts, 26%) — ELFLIQ e-cigarettes top brand with 23 alerts</div>
+        <div class="diff-label eu-side">Cosmetics #1 overall (329 alerts, 24%) — though Electrical overtook in Q2</div>
         <div class="diff-vs" style="background:var(--dark);color:var(--white)">Top<br>category</div>
-        <div class="diff-label">Electrical appliances #1 (42 alerts, 16%) — chargers, hair stylers, and warming products lead</div>
+        <div class="diff-label">Electrical appliances #1 (56 alerts, 18%) — chargers, hair stylers, and warming products lead</div>
       </div>
-
       <div class="diff-row">
-        <div class="diff-label eu-side">56% China origin — broadly comparable to UK but with more European domestic flagging (IT, FR, DE)</div>
+        <div class="diff-label eu-side">59% China origin — with Italy (76), Germany (44), France (41) as other notable sources</div>
         <div class="diff-vs" style="background:var(--dark);color:var(--white)">Origin</div>
-        <div class="diff-label">67% China origin — higher post-Brexit share reflects reduced EU mutual recognition and shifted import flows</div>
+        <div class="diff-label">69% China origin — higher post-Brexit share; UK domestic origin (16 products) is a concern</div>
       </div>
-
       <div class="diff-row">
-        <div class="diff-label eu-side">Split: 57% compulsory, 43% voluntary — market withdrawal and recall most common actions</div>
+        <div class="diff-label eu-side">55% compulsory, 45% voluntary — market withdrawal and recall most common actions</div>
         <div class="diff-vs" style="background:var(--dark);color:var(--white)">Enforcement</div>
-        <div class="diff-label">Import bans are the #1 action (112 cases, 42%) — a more aggressive border-focused posture than the EU</div>
+        <div class="diff-label">Import bans are the #1 action (129 cases, 41%) — a more aggressive border-focused posture</div>
       </div>
-
       <div class="diff-row">
-        <div class="diff-label eu-side">Toy hazards mainly chemical (68 alerts) and choking (113 alerts) — traditional compliance failures</div>
+        <div class="diff-label eu-side">Toy hazards: choking (134) and chemical (52) — traditional compliance failures dominate</div>
         <div class="diff-vs" style="background:var(--dark);color:var(--white)">Toy<br>risk</div>
-        <div class="diff-label">Toy hazards dominated by hydrating polymer ingestion (35 alerts) — a novel physical risk not prominent in EU data</div>
+        <div class="diff-label">Toy hazards: hydrating polymer ingestion (35 alerts) — a novel physical risk not seen in EU data</div>
       </div>
-
       <div class="diff-row">
-        <div class="diff-label eu-side">15 confirmed counterfeits, Pop Mart cluster largest — brand impersonation is an emerging EU issue</div>
+        <div class="diff-label eu-side">14 confirmed counterfeits — Pop Mart cluster largest; Hong Kong origin rising fast in Q2</div>
         <div class="diff-vs" style="background:var(--dark);color:var(--white)">New<br>risks</div>
-        <div class="diff-label">4 TikTok Shop–specific alerts — the UK is actively naming platforms in enforcement notices, a leading indicator</div>
+        <div class="diff-label">50 online listings removed across platforms — enforcement is increasingly targeting digital storefronts</div>
       </div>
-
     </div>
-
     <div class="sec-divider"></div>
     <div class="sec-label" style="margin-bottom:14px">Shared across both markets</div>
     <div class="three-col">
       <div class="insight" style="background:var(--light)">
         <div class="insight-title" style="color:var(--dark)">China dominates origin</div>
-        <div class="insight-body" style="color:var(--midnight)">Both markets see China as the majority source of flagged products — 56% in the EU, 67% in the UK. This reflects the volume of low-cost consumer goods entering both markets from Chinese manufacturers.</div>
+        <div class="insight-body" style="color:var(--midnight)">Both markets see China as the majority source of flagged products — 59% EU, 69% UK. This reflects the volume of low-cost consumer goods entering both markets from Chinese manufacturers.</div>
       </div>
       <div class="insight" style="background:var(--light)">
         <div class="insight-title" style="color:var(--dark)">Electrical &amp; toy risk universal</div>
@@ -651,104 +571,240 @@ body { font-family: 'Montserrat', sans-serif; font-size: 14px; background: var(-
       </div>
       <div class="insight" style="background:var(--light)">
         <div class="insight-title" style="color:var(--dark)">Online marketplace exposure</div>
-        <div class="insight-body" style="color:var(--midnight)">Both markets are grappling with unsafe products sold via online platforms. The UK now explicitly names platforms (TikTok Shop, Amazon) in recall notices — the EU is likely to follow.</div>
+        <div class="insight-body" style="color:var(--midnight)">Both markets are increasing enforcement against products sold via online platforms, with the UK actively removing listings and the EU escalating compulsory actions.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══ FOOTER ══ -->
+<!-- ══ Q2 TRENDS TAB ══ -->
+<div class="tab-panel" id="tab-trends">
+  <div class="trends-header">
+    <div class="trends-header-kicker">Q2 2026 · April – May · Emerging patterns</div>
+    <div class="trends-header-title">What Changed in Q2?</div>
+    <div class="trends-header-sub">Comparing Q1 (January–March) vs Q2 (April–May) across both EU and UK datasets to surface new and shifting product safety risks.</div>
+  </div>
+  <div class="trends-body">
+
+    <div class="sec-label" style="margin-bottom:14px">Q2 Headline shifts</div>
+    <div class="delta-grid">
+      <div class="delta-card up">
+        <div class="delta-label">EU Electrical alerts</div>
+        <div class="delta-num up">+56%<span class="delta-badge up">↑</span></div>
+        <div class="delta-sub">91 in Q1 → 142 in Q2. Overtook cosmetics as the #1 EU category in Q2.</div>
+      </div>
+      <div class="delta-card down">
+        <div class="delta-label">EU Cosmetics alerts</div>
+        <div class="delta-num down">−70%<span class="delta-badge down">↓</span></div>
+        <div class="delta-sub">253 in Q1 → 76 in Q2. A sharp drop — but cosmetics remains #1 overall for the full period.</div>
+      </div>
+      <div class="delta-card up">
+        <div class="delta-label">UK Machinery alerts</div>
+        <div class="delta-num up">+129%<span class="delta-badge up">↑</span></div>
+        <div class="delta-sub">7 in Q1 → 16 in Q2. Surge driven by UK-manufactured packaging and sealing machinery.</div>
+      </div>
+      <div class="delta-card new">
+        <div class="delta-label">Hong Kong origin (EU)</div>
+        <div class="delta-num new">6×<span class="delta-badge" style="background:#fff3cc;color:#a06000">↑</span></div>
+        <div class="delta-sub">4 alerts in Q1 → 24 in Q2. A notable new routing pattern worth monitoring closely.</div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+    <div class="sec-label" style="margin-bottom:14px">EU: Q1 vs Q2 category shift</div>
+    <div style="margin-bottom:20px" id="eu-q-bars"></div>
+
+    <div class="sec-divider"></div>
+    <div class="sec-label" style="margin-bottom:14px">UK: Q1 vs Q2 hazard shift</div>
+    <div style="margin-bottom:20px" id="uk-q-bars"></div>
+
+    <div class="sec-divider"></div>
+    <div class="sec-label" style="margin-bottom:14px">Trend analysis: what Q2 signals</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
+
+      <div class="trend-compare-row">
+        <div class="trend-q"><strong>Q1 EU:</strong> Cosmetics dominated at 253 alerts — mainly fragrances and skin care products with banned chemical ingredients violating REACH.</div>
+        <div class="trend-mid"><div class="trend-mid-inner">Cosmetics<br>trend</div></div>
+        <div class="trend-q q2"><strong>Q2 EU:</strong> Cosmetics fell sharply to 76 alerts. This may reflect seasonal patterns (fewer fragrance launches post-holiday) or accelerated enforcement clearing a backlog of Q1 cases.</div>
+      </div>
+
+      <div class="trend-compare-row">
+        <div class="trend-q"><strong>Q1 EU:</strong> Electrical appliances at 91 alerts — primarily chargers and small appliances with electric shock risk.</div>
+        <div class="trend-mid"><div class="trend-mid-inner">Electrical<br>trend</div></div>
+        <div class="trend-q q2"><strong>Q2 EU:</strong> Electrical surged to 142 alerts — a 56% increase, making it the single largest Q2 category. Fire risk alerts grew notably alongside electric shock cases, pointing to a broader product quality issue in consumer electronics.</div>
+      </div>
+
+      <div class="trend-compare-row">
+        <div class="trend-q"><strong>Q1 UK:</strong> Chemical hazards at 46 alerts — asbestos in craft sand (concentrated in Jan–Feb) and banned cosmetic substances.</div>
+        <div class="trend-mid"><div class="trend-mid-inner">UK<br>chemical</div></div>
+        <div class="trend-q q2"><strong>Q2 UK:</strong> Chemical alerts dropped sharply to 16 — suggesting the asbestos craft sand recall wave has largely run its course, with most affected products now off the market.</div>
+      </div>
+
+      <div class="trend-compare-row">
+        <div class="trend-q"><strong>Q1 UK:</strong> Machinery at 7 alerts — mostly power tools and drill/drivers from overseas manufacturers.</div>
+        <div class="trend-mid"><div class="trend-mid-inner">UK<br>machinery</div></div>
+        <div class="trend-q q2"><strong>Q2 UK:</strong> Machinery jumped to 16 alerts (+129%). Notably, several are UK-manufactured packaging and sealing machines — suggesting domestic manufacturing compliance is under increased scrutiny from the Health &amp; Safety Executive.</div>
+      </div>
+
+      <div class="trend-compare-row">
+        <div class="trend-q"><strong>Q1 EU:</strong> Hong Kong as a country of origin appeared in just 4 alerts, consistent with historical levels.</div>
+        <div class="trend-mid"><div class="trend-mid-inner">Origin<br>routing</div></div>
+        <div class="trend-q q2"><strong>Q2 EU:</strong> Hong Kong origin jumped to 24 alerts — a 6× increase. This may indicate Chinese manufacturers routing goods through Hong Kong to obscure country-of-origin labelling in response to increased scrutiny of China-origin products.</div>
+      </div>
+
+    </div>
+
+    <div class="sec-divider"></div>
+    <div class="sec-label" style="margin-bottom:14px">Q2 new brand entrants (UK)</div>
+    <div style="font-size:11px;color:var(--gray500);margin-bottom:10px;font-weight:300">Brands appearing in UK alerts for the first time in Q2 — not seen in Q1 data:</div>
+    <div id="new-brands"></div>
+
+    <div style="margin-top:24px" class="sec-divider"></div>
+    <div class="sec-label" style="margin-bottom:14px">What to watch in Q3</div>
+    <div class="three-col">
+      <div class="insight" style="background:#fff3e0">
+        <div class="insight-title" style="color:#b36000">EU electrical surge</div>
+        <div class="insight-body" style="color:var(--midnight)">The 56% Q2 increase in EU electrical alerts — particularly fire-risk products — warrants close monitoring in Q3. If the trend continues, electrical appliances could become the dominant EU category for the full year.</div>
+      </div>
+      <div class="insight" style="background:#fde8e8">
+        <div class="insight-title" style="color:#a30000">Hong Kong routing (EU)</div>
+        <div class="insight-body" style="color:var(--midnight)">The 6× jump in Hong Kong-origin EU alerts in Q2 is a significant signal. If confirmed in Q3, this suggests a systematic supply chain evasion pattern that regulators will likely respond to directly.</div>
+      </div>
+      <div class="insight" style="background:var(--light)">
+        <div class="insight-title" style="color:var(--dark)">UK domestic manufacturing</div>
+        <div class="insight-body" style="color:var(--midnight)">The rise of UK-origin machinery alerts in Q2 is new — historically, UK alerts focus on imported goods. Increased HSE activity suggests domestic compliance audits are intensifying heading into Q3.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div class="footer">
-  <div class="footer-left">Sources: EU Safety Gate (RAPEX) · UK OPSS Product Safety Database · Ingested via LegitScript pipeline</div>
+  <div class="footer-left">Sources: EU Safety Gate (RAPEX) · UK OPSS Product Safety Database · LegitScript pipeline · Jan–May 2026</div>
   <div class="footer-right">legit<strong>script</strong>.com</div>
 </div>
 
 <script>
-// ── TAB SWITCHING ──
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn, .tab-compare-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
-  // re-render charts for the active tab
-  if (id === 'eu' && !window.euRendered) { renderEU(); window.euRendered = true; }
-  if (id === 'uk' && !window.ukRendered) { renderUK(); window.ukRendered = true; }
+  if (id==='eu' && !window.euR) { renderEU(); window.euR=true; }
+  if (id==='uk' && !window.ukR) { renderUK(); window.ukR=true; }
+  if (id==='trends' && !window.trR) { renderTrends(); window.trR=true; }
 }
 
-// ── GENERIC BAR HELPER ──
 function bars(id, data, max, col) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.innerHTML = data.map(([l, v]) => {
-    const p = Math.round(v / max * 100);
-    return `<div class="bar-item">
-      <div class="bar-meta"><span class="bar-name">${l}</span><span class="bar-val">${v}</span></div>
-      <div class="bar-track"><div class="bar-fill" style="width:${p}%;background:${col}"></div></div>
+  const el = document.getElementById(id); if (!el) return;
+  el.innerHTML = data.map(([l,v]) => {
+    const p = Math.round(v/max*100);
+    return `<div class="bar-item"><div class="bar-meta"><span class="bar-name">${l}</span><span class="bar-val">${v}</span></div><div class="bar-track"><div class="bar-fill" style="width:${p}%;background:${col}"></div></div></div>`;
+  }).join('');
+}
+
+function deltaBar(id, data) {
+  const el = document.getElementById(id); if (!el) return;
+  const maxV = Math.max(...data.map(([,,q1,q2])=>Math.max(q1,q2)));
+  el.innerHTML = data.map(([label, , q1, q2]) => {
+    const pct1 = Math.round(q1/maxV*100);
+    const pct2 = Math.round(q2/maxV*100);
+    const chg = q1 > 0 ? Math.round((q2-q1)/q1*100) : 0;
+    const chgCol = chg > 15 ? '#ff4c4c' : chg < -15 ? '#85c51f' : '#667085';
+    const chgStr = chg >= 0 ? `+${chg}%` : `${chg}%`;
+    return `<div style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px">
+        <span style="font-size:11px;color:var(--midnight)">${label}</span>
+        <span style="font-size:10px;font-weight:700;color:${chgCol}">${chgStr} Q1→Q2</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:9px;color:var(--gray500);width:24px">Q1</span>
+          <div style="flex:1;height:7px;background:var(--gray200);border-radius:1px;overflow:hidden"><div style="height:100%;width:${pct1}%;background:var(--midnight);border-radius:1px"></div></div>
+          <span style="font-size:10px;font-weight:600;color:var(--midnight);width:28px;text-align:right">${q1}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:9px;color:var(--gray500);width:24px">Q2</span>
+          <div style="flex:1;height:7px;background:var(--gray200);border-radius:1px;overflow:hidden"><div style="height:100%;width:${pct2}%;background:${chgCol};border-radius:1px"></div></div>
+          <span style="font-size:10px;font-weight:600;width:28px;text-align:right;color:${chgCol}">${q2}</span>
+        </div>
+      </div>
     </div>`;
   }).join('');
 }
 
-// ── TIMELINE HELPER ──
 function timeline(id, data, peakIdx, baseColor, peakColor) {
-  const el = document.getElementById(id);
-  if (!el) return;
+  const el = document.getElementById(id); if (!el) return;
   const mx = Math.max(...data);
-  el.innerHTML = data.map((v, i) => {
-    const pct = Math.round(v / mx * 100);
-    const col = i === peakIdx ? peakColor : baseColor;
-    return `<div class="tl-col">
-      <span class="tl-num" style="color:${col}">${v}</span>
-      <div class="tl-bar" style="height:${pct}%;background:${col}"></div>
-    </div>`;
+  el.innerHTML = data.map((v,i) => {
+    const pct = Math.round(v/mx*100);
+    const col = i===peakIdx ? peakColor : baseColor;
+    return `<div class="tl-col"><span class="tl-num" style="color:${col}">${v}</span><div class="tl-bar" style="height:${pct}%;background:${col}"></div></div>`;
   }).join('');
 }
 
-// ── ORIGIN BAR HELPER ──
 function originBar(barId, legendId, origins) {
-  const total = origins.reduce((s,[,v])=>s+v, 0);
+  const total = origins.reduce((s,[,v])=>s+v,0);
   const bar = document.getElementById(barId);
   const leg = document.getElementById(legendId);
-  if (!bar || !leg) return;
-  bar.innerHTML = origins.map(([l, v, c]) => {
-    const pct = (v/total*100).toFixed(1);
-    return `<div class="origin-seg" style="width:${pct}%;background:${c}" title="${l}: ${v}">${pct > 5 ? Math.round(pct)+'%' : ''}</div>`;
+  if (!bar||!leg) return;
+  bar.innerHTML = origins.map(([l,v,c]) => {
+    const pct=(v/total*100).toFixed(1);
+    return `<div class="origin-seg" style="width:${pct}%;background:${c}" title="${l}: ${v}">${pct>5?Math.round(pct)+'%':''}</div>`;
   }).join('');
-  leg.innerHTML = origins.map(([l, v, c]) =>
-    `<span><span class="ld" style="background:${c}"></span>${l} ${v}</span>`
-  ).join('');
+  leg.innerHTML = origins.map(([l,v,c])=>`<span><span class="ld" style="background:${c}"></span>${l} ${v}</span>`).join('');
 }
 
-// ── RENDER EU ──
 function renderEU() {
-  timeline('eu-tl', [166,216,322,234,294,132], 2, '#114989', '#ff4c4c');
+  timeline('eu-tl',[216,324,241,305,288],1,'#114989','#ff4c4c');
   originBar('eu-origin-bar','eu-origin-legend',[
-    ['China',765,'#051d40'],['Unknown',178,'#667085'],['Italy',87,'#0a7acc'],
-    ['France',43,'#00c0fc'],['Germany',42,'#114989'],['Other',249,'#cdecf8']
+    ['China',805,'#051d40'],['Unknown',165,'#667085'],['Italy',76,'#0a7acc'],
+    ['Germany',44,'#00c0fc'],['France',41,'#114989'],['Other',243,'#cdecf8']
   ]);
-  bars('eu-cat-bars',[['Cosmetics',359],['Toys',260],['Electrical equip.',217],['Chemical products',66],['Childcare & children',61],['Clothing & textiles',50],['Jewellery',49],['Machinery',46],['Lighting chains',42],['Sports & hobby',37]],400,'#114989');
-  bars('eu-risk-bars',[['Chemical',560],['Electric shock',141],['Choking',133],['Injuries',96],['Fire',70],['Environment',69],['Chem+Environment',37],['Burns',18],['Suffocation',13]],580,'#00c0fc');
-  bars('eu-cos-bars',[['Chemical',344],['Microbiological',8],['Burns',4],['Other',1]],360,'#0a7acc');
-  bars('eu-toy-bars',[['Choking',113],['Chemical',50],['Choking+Chemical',15],['Other',14],['Environment',13],['Injuries',7]],130,'#0a7acc');
-  bars('eu-notify-bars',[['France',206],['UK (N. Ireland)',191],['Italy',174],['Czechia',149],['Germany',107],['Sweden',89],['Hungary',52],['Poland',51],['Slovakia',49],['Norway',36]],220,'#051d40');
-  document.getElementById('eu-brands').innerHTML = ['ELFLIQ','Calvin Klein','Salvatore Ferragamo','Dove','Moschino','Adidas','Rexona'].map(b=>`<span class="tag">${b}</span>`).join('');
+  bars('eu-cat-bars',[['Cosmetics',329],['Toys',281],['Electrical equip.',233],['Chemical products',74],['Childcare & children',63],['Clothing & textiles',45],['Jewellery',44],['Lighting chains',43],['Machinery',42],['Sports & hobby',39]],350,'#114989');
+  bars('eu-risk-bars',[['Chemical',528],['Choking',156],['Electric shock',152],['Injuries',97],['Fire',68],['Environment',57],['Burns',36],['Chem+Environment',34],['Health/other',25]],550,'#00c0fc');
+  bars('eu-cos-bars',[['Chemical',316],['Microbiological',6],['Burns',4],['Other',2]],330,'#0a7acc');
+  bars('eu-toy-bars',[['Choking',134],['Chemical',52],['Choking+Chemical',16],['Health/other',13],['Environment',8],['Injuries',8]],140,'#0a7acc');
+  bars('eu-notify-bars',[['France',202],['UK (N. Ireland)',181],['Italy',157],['Czechia',146],['Germany',120],['Sweden',74],['Hungary',71],['Poland',58],['Spain',36],['Norway',36]],210,'#051d40');
+  document.getElementById('eu-brands').innerHTML=['ELFLIQ','Orchidea Profumi','Pop Mart (counterfeit)','PARFUMS DE QUALITE','Vevor','OPI','Salvatore Ferragamo'].map(b=>`<span class="tag">${b}</span>`).join('');
 }
 
-// ── RENDER UK ──
 function renderUK() {
-  timeline('uk-tl', [1,67,63,58,56,24], 1, '#2a3b4c', '#ff4c4c');
+  timeline('uk-tl',[67,63,58,56,68],0,'#2a3b4c','#ff4c4c');
   originBar('uk-origin-bar','uk-origin-legend',[
-    ['China',181,'#051d40'],['Unknown',42,'#667085'],['United Kingdom',13,'#0a7acc'],
-    ['India',8,'#00c0fc'],['Germany',4,'#114989'],['Other',21,'#cdecf8']
+    ['China',214,'#051d40'],['Unknown',45,'#667085'],['United Kingdom',16,'#0a7acc'],
+    ['India',10,'#00c0fc'],['Germany',4,'#114989'],['Other',23,'#cdecf8']
   ]);
-  bars('uk-cat-bars',[['Electrical appliances',42],['Toys',35],['Decorative/Homeware',19],['Hobby & sports',19],['Machinery',17],['Cosmetics & personal care',10],['Hand tools',9],['Lighting equipment',8],['Childcare equipment',7],['Jewellery',5]],45,'#2a3b4c');
-  bars('uk-risk-bars',[['Fire / Burns',99],['Chemical',59],['Injuries',40],['Electric shock',34],['Choking/Asphyxiation',26],['Falls / Cuts',21],['Entrapment',5]],105,'#ff4c4c');
-  bars('uk-notify-bars',[['Local Authority Trading Standards',170],['OPSS (Central)',36],['Health & Safety Executive',6]],175,'#2a3b4c');
+  bars('uk-cat-bars',[['Electrical appliances',56],['Toys',46],['Hobby & sports',24],['Machinery',23],['Decorative/Homeware',20],['Childcare equipment',13],['Lighting equipment',11],['Cosmetics & personal care',11],['Hand tools',9],['Furniture',6]],60,'#2a3b4c');
+  bars('uk-risk-bars',[['Fire / Burns',118],['Chemical',62],['Injuries',50],['Choking/Asphyxiation',58],['Electric shock',35],['Falls / Cuts',21],['Entrapment',6]],125,'#ff4c4c');
+  bars('uk-notify-bars',[['Local Authority Trading Standards',206],['OPSS (Central)',44],['Health & Safety Executive',6]],210,'#2a3b4c');
 }
 
-// ── INIT: render EU on load ──
-window.euRendered = false;
-window.ukRendered = false;
-document.addEventListener('DOMContentLoaded', () => { renderEU(); window.euRendered = true; });
+function renderTrends() {
+  deltaBar('eu-q-bars',[
+    ['Cosmetics','cos',253,76],
+    ['Electrical appliances','elec',91,142],
+    ['Toys','toys',155,126],
+    ['Chemical products','chem',43,31],
+    ['Childcare & children','child',39,24],
+    ['Machinery','mach',20,22]
+  ]);
+  deltaBar('uk-q-bars',[
+    ['Fire / Burns','fire',65,53],
+    ['Chemical','chem',46,16],
+    ['Choking / Asphyxiation','choke',36,22],
+    ['Injuries','inj',30,20],
+    ['Electric shock','shock',23,12],
+    ['Machinery alerts','mach',7,16]
+  ]);
+  document.getElementById('new-brands').innerHTML = [
+    '3M','Acer','Amped','Ann Summers','BHS','Bababing','Babysense','BenQ',
+    'Besseto','Bluzen','Boden','Build-A-Bear','Centurion','Comforder','Crayola','RONTALY','Yaheetech'
+  ].map(b=>`<span class="tag" style="border-color:var(--midnight);color:var(--midnight)">${b}</span>`).join('');
+}
+
+window.euR=false; window.ukR=false; window.trR=false;
+document.addEventListener('DOMContentLoaded', ()=>{ renderEU(); window.euR=true; });
 </script>
 </body>
 </html>
